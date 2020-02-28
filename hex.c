@@ -27,9 +27,10 @@ char hexdigit (char c)
   }
   return outc;
 }
+char test[]="31 32 33 34 35 36 37 38";
 int main()
 {  int arg;
-  char *c=spaces("31 32 33 34 35 36 37 38");
+  char *c=spaces(test);
   int sl;
   char oc;
 

@@ -27,8 +27,8 @@ char hexdigit (char c)
   }
   return outc;
 }
-char ascii[]="0";
-const unsigned char* hex2ascii(char *hexval)
+char ascii[16];
+const unsigned char* hex2ascii(char hexval[])
 {  int arg;
   char *c=spaces(hexval);
   int sl;
@@ -44,12 +44,13 @@ const unsigned char* hex2ascii(char *hexval)
                c,
                sl );
       return "prout";
-    }
+    }int i=0;
     while (*c)
     {
       oc = (hexdigit (*c++) << 4) + hexdigit (*c++);
       fputc (oc, stdout);
-    }ascii[arg]=oc;
+     strcat(ascii,&oc);
+    }
   }
 return ascii;}
 
