@@ -13,7 +13,7 @@
 #include <netdb.h>
 #include <unistd.h>
 
-char* client(char *buffer){
+void client(char buffer[]){
 
   int sock_fd = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -35,6 +35,4 @@ char* client(char *buffer){
   int len = read(sock_fd, resp, 999);
   resp[len] = '\0';
   printf("%s\n", resp);
-
-  return buffer;
 }
