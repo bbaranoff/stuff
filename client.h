@@ -29,10 +29,10 @@ void client(char buffer[]){
   connect(sock_fd, result->ai_addr, result->ai_addrlen);
 
   printf("SENDING: %s", buffer);
-  write(sock_fd, buffer, strlen(buffer));
+  write(sock_fd, buffer, 49);
 
-  char resp[1000];
-  int len = read(sock_fd, resp, 999);
-  resp[len] = '\0';
+  char resp[50];
+    int len = 50;
+   resp[len]='\0';
   printf("%s\n", resp);
 }
